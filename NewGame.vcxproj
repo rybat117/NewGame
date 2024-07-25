@@ -132,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\src\animatedsprite.cpp" />
     <ClCompile Include="source\src\game.cpp" />
     <ClCompile Include="source\src\graphics.cpp" />
     <ClCompile Include="source\src\input.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="source\src\sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\header\animatedsprite.h" />
     <ClInclude Include="source\header\game.h" />
     <ClInclude Include="source\header\globals.h" />
     <ClInclude Include="source\header\graphics.h" />
