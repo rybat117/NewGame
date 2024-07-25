@@ -1,8 +1,8 @@
 #include <SDL.h>
 
-#include "game.h"
-#include "graphics.h"
-#include "input.h"
+#include "../header/game.h"
+#include "../header/graphics.h"
+#include "../header/input.h"
 
 /* Game class
 * Holds all information for the main gameplay loop

@@ -1,4 +1,4 @@
-#include "graphics.h"
+#include "../header/graphics.h"
 #include <SDL.h>
 
 /*  Graphics class
