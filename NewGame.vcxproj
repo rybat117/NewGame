@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\rybat\source\repos\NewGame\SDL2-devel-2.30.5-VC\SDL2-2.30.5\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\rybat\source\repos\NewGame\SDL2-devel-2.30.5-VC\SDL2-2.30.5\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\rybat\source\repos\NewGame\SDL2_image-2.8.2\include;C:\Users\rybat\source\repos\NewGame\SDL2-devel-2.30.5-VC\SDL2-2.30.5\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\rybat\source\repos\NewGame\SDL2_image-2.8.2\lib\x64;C:\Users\rybat\source\repos\NewGame\SDL2-devel-2.30.5-VC\SDL2-2.30.5\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -112,7 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,11 +136,17 @@
     <ClCompile Include="source\src\graphics.cpp" />
     <ClCompile Include="source\src\input.cpp" />
     <ClCompile Include="source\src\main.cpp" />
+    <ClCompile Include="source\src\sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\header\game.h" />
+    <ClInclude Include="source\header\globals.h" />
     <ClInclude Include="source\header\graphics.h" />
     <ClInclude Include="source\header\input.h" />
+    <ClInclude Include="source\header\sprite.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="content\sprites\MyChar.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
