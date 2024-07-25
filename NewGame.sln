@@ -5,6 +5,17 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NewGame", "NewGame.vcxproj", "{9439B13A-0F0E-4622-8FC3-83871B46379F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C7966343-7FC6-4ABE-B699-AE2B31CB0537}"
+	ProjectSection(SolutionItems) = preProject
+		source\src\game.cpp = source\src\game.cpp
+		source\header\game.h = source\header\game.h
+		source\src\graphics.cpp = source\src\graphics.cpp
+		source\header\graphics.h = source\header\graphics.h
+		source\src\input.cpp = source\src\input.cpp
+		source\header\input.h = source\header\input.h
+		source\src\main.cpp = source\src\main.cpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
