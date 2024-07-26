@@ -136,7 +136,9 @@
     <ClCompile Include="source\src\game.cpp" />
     <ClCompile Include="source\src\graphics.cpp" />
     <ClCompile Include="source\src\input.cpp" />
+    <ClCompile Include="source\src\level.cpp" />
     <ClCompile Include="source\src\main.cpp" />
+    <ClCompile Include="source\src\player.cpp" />
     <ClCompile Include="source\src\sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -145,9 +147,12 @@
     <ClInclude Include="source\header\globals.h" />
     <ClInclude Include="source\header\graphics.h" />
     <ClInclude Include="source\header\input.h" />
+    <ClInclude Include="source\header\level.h" />
+    <ClInclude Include="source\header\player.h" />
     <ClInclude Include="source\header\sprite.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\backgrounds\bkBlue.png" />
     <Image Include="content\sprites\MyChar.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
