@@ -8,14 +8,14 @@
 
 AnimatedSprite::AnimatedSprite() {}
 
-AnimatedSprite::AnimatedSprite(Graphics& graphics, const std::string& filePath, int sourceX, int sourceY,
-	int width, int height, float posX, float posY, float timeToUpdate) :
-		Sprite(graphics, filePath, sourceX, sourceY, width, height, posX, posY),
-		_frameIndex(0),
-		_timeToUpdate(timeToUpdate),
-		_visible(true),
-		_currentAnimationOnce(false),
-		_currentAnimation("")
+AnimatedSprite::AnimatedSprite(Graphics& graphics, const std::string &filePath, int sourceX, int sourceY,
+		int width, int height, float posX, float posY, float timeToUpdate) :
+				Sprite(graphics, filePath, sourceX, sourceY, width, height, posX, posY),
+				_frameIndex(0),
+				_timeToUpdate(timeToUpdate),
+				_visible(true),
+				_currentAnimationOnce(false),
+				_currentAnimation("")
 {}
 
 void AnimatedSprite::addAnimation(int frames, int x, int y, std::string name, int width, int height, Vector2 offset) {
@@ -38,6 +38,7 @@ void AnimatedSprite::playAnimation(std::string animation, bool once) {
 	if (this->_currentAnimation != animation) {
 		this->_currentAnimation = animation;
 		this->_frameIndex = 0;
+		printf("%s\n", animation.c_str());
 	}
 }
 

@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		source\src\input.cpp = source\src\input.cpp
 		source\header\input.h = source\header\input.h
 		source\src\main.cpp = source\src\main.cpp
+		assets\system\newgameicon.ico = assets\system\newgameicon.ico
 	EndProjectSection
 EndProject
 Global

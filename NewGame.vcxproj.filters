@@ -39,6 +39,12 @@
     <ClCompile Include="source\src\level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\src\tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\src\tile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\header\input.h">
@@ -65,6 +71,12 @@
     <ClInclude Include="source\header\level.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\header\tinyxml2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\header\tile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="content\sprites\MyChar.png">
@@ -73,5 +85,15 @@
     <Image Include="assets\backgrounds\bkBlue.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\tilesets\PrtCave.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\sprites\MyChar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\maps\Map 1.tmx" />
+    <None Include="assets\maps\PrtCave.tsx" />
   </ItemGroup>
 </Project>
