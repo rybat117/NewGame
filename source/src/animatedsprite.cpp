@@ -38,7 +38,6 @@ void AnimatedSprite::playAnimation(std::string animation, bool once) {
 	if (this->_currentAnimation != animation) {
 		this->_currentAnimation = animation;
 		this->_frameIndex = 0;
-		printf("%s\n", animation.c_str());
 	}
 }
 
