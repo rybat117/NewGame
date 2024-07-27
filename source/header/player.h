@@ -46,6 +46,8 @@ private:
 	Direction _facing;
 
 	bool _grounded;
+
+	int _jumpCount;
 };
 
 #endif

@@ -15,7 +15,8 @@ Player::Player(Graphics &graphics, Vector2 spawnPoint) :
 	_dx(0),
 	_dy(0),
 	_facing(RIGHT),
-	_grounded(false)
+	_grounded(false),
+	_jumpCount(0)
 {
 	graphics.loadImage("assets/sprites/MyChar.png");
 
@@ -56,8 +57,11 @@ void Player::moveRight() {
 
 void Player::jump() {
 	if (this->_grounded) {
-		this->_dy = player_constants::JUMP_HEIGHT;
-		this->playAnimation(this->_facing == RIGHT ? "JumpRight" : "JumpLeft");
+		if (this->_jumpCount < 2) {
+			this->_dy = player_constants::JUMP_HEIGHT;
+			this->playAnimation(this->_facing == RIGHT ? "JumpRight" : "JumpLeft");
+			this->_jumpCount++;
+		}
 	}
 }
 
@@ -84,6 +88,7 @@ void Player::handleTileCollisions(std::vector<Rectangle>& other) {
 				this->_y = other.at(i).getTop() - this->_boundingBox.getHeight() - 1;
 				this->_dy = 0;
 				this->_grounded = true;
+				this->_jumpCount = 0;
 				break;
 			case sides::LEFT:
 				this->_x = other.at(i).getRight() + 1;
