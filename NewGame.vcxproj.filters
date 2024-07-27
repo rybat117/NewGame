@@ -98,5 +98,6 @@
   <ItemGroup>
     <None Include="assets\maps\Map 1.tmx" />
     <None Include="assets\maps\PrtCave.tsx" />
+    <None Include="assets\maps\Map 2.tmx" />
   </ItemGroup>
 </Project>

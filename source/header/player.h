@@ -26,7 +26,7 @@ public:
 	///* void jump
 	//* Makes the player jump
 	//*/
-	//void jump();
+	void jump();
 
 	/* void stopMoving
 	* Stops moving the player

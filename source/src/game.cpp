@@ -27,7 +27,7 @@ void Game::gameLoop() {
 	Input input;
 	SDL_Event event;
 
-	this->_level = Level("Map 1", Vector2(100, 100), graphics);
+	this->_level = Level("Map 2", Vector2(100, 100), graphics);
 	this->_player = Player(graphics, this->_level.getPlayerSpawnPoint());
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
@@ -57,9 +57,9 @@ void Game::gameLoop() {
 		else if (input.isKeyHeld(SDL_SCANCODE_D) == true) {
 			this->_player.moveRight();
 		}
-		/*if (input.wasKeyPressed(SDL_SCANCODE_SPACE) == true) {
+		if (input.wasKeyPressed(SDL_SCANCODE_SPACE) == true) {
 			this->_player.jump();
-		}*/
+		}
 		if (!input.isKeyHeld(SDL_SCANCODE_A) && !input.isKeyHeld(SDL_SCANCODE_D)) {
 			this->_player.stopMoving();
 		}
