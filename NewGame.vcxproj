@@ -153,9 +153,11 @@
     <ClInclude Include="source\header\level.h" />
     <ClInclude Include="source\header\player.h" />
     <ClInclude Include="source\header\rectangle.h" />
+    <ClInclude Include="source\header\slope.h" />
     <ClInclude Include="source\header\sprite.h" />
     <ClInclude Include="source\header\tile.h" />
     <ClInclude Include="source\header\tinyxml2.h" />
+    <ClInclude Include="source\header\utils.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\backgrounds\bkBlue.png" />

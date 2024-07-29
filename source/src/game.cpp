@@ -27,7 +27,7 @@ void Game::gameLoop() {
 	Input input;
 	SDL_Event event;
 
-	this->_level = Level("Map 2", Vector2(100, 100), graphics);
+	this->_level = Level("Map 1", Vector2(100, 100), graphics);
 	this->_player = Player(graphics, this->_level.getPlayerSpawnPoint());
 
 	int LAST_UPDATE_TIME = SDL_GetTicks();
@@ -91,5 +91,12 @@ void Game::update(float elapsedTime) {
 	if ((others = this->_level.checkTileCollisions(this->_player.getBoundingBox())).size() > 0) {
 		// Player collided with tile
 		this->_player.handleTileCollisions(others);
+	}
+
+	// Check slopes
+	std::vector<Slope> otherSlopes;
+	if ((otherSlopes = this->_level.checkSlopeCollisions(this->_player.getBoundingBox())).size() > 0) {
+		// Player collided with slope
+		this->_player.handleSlopeCollisions(otherSlopes);
 	}
 }

@@ -56,12 +56,12 @@ void Player::moveRight() {
 }
 
 void Player::jump() {
-	if (this->_grounded) {
-		if (this->_jumpCount < 2) {
-			this->_dy = player_constants::JUMP_HEIGHT;
-			this->playAnimation(this->_facing == RIGHT ? "JumpRight" : "JumpLeft");
-			this->_jumpCount++;
-		}
+	if (this->_jumpCount < 2) {
+		this->_dy = 0;
+		this->_dy += player_constants::JUMP_HEIGHT;
+		this->_grounded = false;
+		this->playAnimation(this->_facing == RIGHT ? "JumpRight" : "JumpLeft");
+		this->_jumpCount++;
 	}
 }
 
@@ -81,8 +81,12 @@ void Player::handleTileCollisions(std::vector<Rectangle>& other) {
 		if (collisionSide != sides::NONE) {
 			switch (collisionSide) {
 			case sides::TOP:
-				this->_y = other.at(i).getBottom() + 1;
 				this->_dy = 0;
+				this->_y = other.at(i).getBottom() + 1;
+				if (this->_grounded) {
+					this->_dx = 0;
+					this->_x -= this->_facing == RIGHT ? 1.0f : -1.0f;
+				}
 				break;
 			case sides::BOTTOM:
 				this->_y = other.at(i).getTop() - this->_boundingBox.getHeight() - 1;
@@ -99,6 +103,24 @@ void Player::handleTileCollisions(std::vector<Rectangle>& other) {
 			}
 		}
 	}
+}
+//void handleSlopeCollisions
+//Handles collisions with all slopes the player collides with
+void Player::handleSlopeCollisions(std::vector<Slope>& others) {
+	for (int i = 0; i < others.size(); i++) {
+		int b = (others.at(i).getP1().y - (others.at(i).getSlope() * fabs(others.at(i).getP1().x)));
+
+		int centerX = this->_boundingBox.getCenterX();
+		int newY = (others.at(i).getSlope() * centerX) + b - 8;
+
+		if (this->_grounded) {
+			this->_y = newY - this->_boundingBox.getHeight();
+			this->_grounded = true;
+			this->_jumpCount = 0;
+		}
+
+	}
+
 }
 
 void Player::update(float elapsedTime) {

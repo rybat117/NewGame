@@ -7,6 +7,7 @@
 #include "../header/globals.h"
 #include "../header/tile.h"
 #include "../header/rectangle.h"
+#include "../header/slope.h"
 
 class Graphics;
 struct SDL_Texture;
@@ -22,6 +23,7 @@ public:
 	void draw(Graphics &graphics);
 
 	std::vector<Rectangle> checkTileCollisions(const Rectangle& other);
+	std::vector<Slope> checkSlopeCollisions(const Rectangle& other);
 
 	const Vector2 getPlayerSpawnPoint() const;
 
@@ -37,6 +39,7 @@ private:
 	std::vector<Tile> _tileList;
 	std::vector<Tileset> _tilesets;
 	std::vector<Rectangle> _collisionRects;
+	std::vector<Slope> _slopes;
 
 	//std::vector<SDL_Rect>
 

@@ -3,6 +3,7 @@
 
 #include "../header/animatedsprite.h"
 #include "../header/globals.h"
+#include "../header/slope.h"
 
 class Graphics;
 
@@ -36,7 +37,8 @@ public:
 	virtual void animationDone(std::string currentAnimation);
 	virtual void setupAnimation();
 
-	void handleTileCollisions(std::vector<Rectangle>& other);
+	void handleTileCollisions(std::vector<Rectangle>& others);
+	void handleSlopeCollisions(std::vector<Slope>& others);
 
 	const float getX() const;
 	const float getY() const;
